@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manbox - Online Manhood Interpreter</title>
+    	<meta charset="UTF-8">
+		<meta name="keywords" content="programming, procedural generation, manhood, mh3, scripting">
+    	<meta name="desctiption" content="Online interpreter for the Manhood text generation langauge">
+		
+    	<link rel="stylesheet" type="text/css" href="static/style.css"/>		
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>		
+		<script src="static/scripts/mousetrap.min.js"></script>
+		<script src="static/scripts/tabby.js"></script>
+		<script src="static/scripts/querystring.js"></script>
+        <script src="static/scripts/manbox.js"></script>
+    </head>
+    
+    <body>     
+        <div id="main_container">		
+            <img src="static/logo.png"/>
+            <p><a href="https://bitbucket.org/sanitypleateam/mh3/wiki/Home" target="_blank">Language Reference</a> | <a href="https://github.com/TheBerkin/ManDic" target="_blank">Dictionary</a></p>
+			<a href="https://github.com/TheBerkin/MH3"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>			
+			<div>
+				<div class="module_inner">
+					<div class="mod_text">Pattern</div>
+					<textarea id="input" class="mousetrap" rows="8" cols="48" wrap="off" spellcheck="false"></textarea>
+					<script>$('textarea#input').tabby({tabString:'    '});</script>
+					<div id="hashfield">
+						<div class="mod_text small">Permalink</div>
+						<input type="text" id="hash" readonly="true" onclick="this.select();">
+					</div>
+					
+					<div class="btn_container">
+						<div class="button" onclick="runPat()" id="btnrun" title="Ctrl+Enter">Run Pattern</div>
+					</div>
+				</div>
+			</div>
+            
+			<div>
+				<div class="module_inner">
+					<div class="mod_text">Output</div>
+					<div>
+						<textarea id="output" readonly="true" rows="8" cols="48"></textarea>
+						<div id="loading">
+							<img src="static/ajax-loader.gif"/>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </body>
+</html>
