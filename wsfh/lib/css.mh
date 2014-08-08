@@ -1,0 +1,160 @@
+[sub seed/[rep 16]{[num 0/9]|{a|b|c|d|e|f}}]
+
+[sub font/
+	{
+		Times New Roman|
+		Comic Sans MS|
+		Courier New|
+		Verdana|
+		Papyrus|
+		Arial|
+		Georgia|
+		Lucida Sans|
+		Impact|
+		Consolas|
+		Arial Black|
+		Sans Serif
+	}
+]
+
+[sub gen_element_info/
+	[isub element_margin/[num 0/3]px]
+]
+
+[sub gen_news_element_info/
+	[isub news_sidebar_float/{left|right}]
+	[isub news_element_padding/[num 4/10]px]
+]
+
+[sub css-standard-set/
+	[$css-repeater]
+	{
+		color: [$color]|
+		background-color: [$color]|
+		font-family: "[$font]"|
+		font-style: {normal|italic|oblique}|
+		font-weight: {normal|bold|bolder}|
+		border-width: [num 0/10]px|
+		border-color: [$color]|
+		text-align: {left|right|center|justify}|
+		list-style-type: {disc|armenian|circle|decimal|lower-alpha|lower-roman|upper-alpha|uppeer-roman|square}
+	}
+]
+
+[sub css-lite-set/
+	[$css-repeater]
+	{
+		color: [$color]|
+		font-family: "[$font]"|
+		font-style: {normal|italic|oblique}|
+		text-align: {left|justify}|
+		list-style-type: {disc|armenian|circle|decimal|lower-alpha|lower-roman|upper-alpha|uppeer-roman|square}
+	}
+]
+
+[sub css-repeater/
+	[rep each]
+	[sep \n]
+	[after ;]
+	[before \s\s]
+	[sync _/ordered]
+]
+
+[sub css @name/
+	[arg name]\n\{\n
+	[$css-standard-set]
+	[$css-repeater]
+	{
+		margin: [$element_margin]|
+		padding: [num 0/30]px|
+		font-size: [num 12/30]px|
+		background-image: {url("[$image-small]")|none|none|none}
+	}
+	\n\}\n
+]
+
+[sub css-header @name/
+	[arg name]\n\{\n
+	[$css-standard-set]
+	[$css-repeater]
+	{
+		margin: [$element_margin]|
+		padding: [num 0/30]px|
+		font-size: [num 24/48]px
+	}
+	\n\}\n
+]
+
+[sub css-news-main @name/
+	[arg name]\n\{\n
+	[$css-standard-set]
+	[$css-repeater]
+	{
+		font-size: [num 12/30]px|
+		overflow: auto|
+		height: 100%|
+		margin: [$element_margin]
+	}
+	\n\}\n
+]
+
+[sub css-news-sidebar @name/
+	[arg name]\n\{\n
+	[$css-standard-set]
+	[$css-repeater]
+	{
+		font-size: [num 12/30]px|
+		overflow: auto|
+		height: 100%|
+		float: [$news_sidebar_float]|
+		width: [num 180/250]px|
+		margin: [$element_margin]
+	}
+	\n\}\n
+]
+
+[sub css-news-headline/
+	#headline\n\{\n
+	[$css-lite-set]
+	[$css-repeater]
+	{
+		font-size: [num 24/72]px
+	}
+	\n\}\n
+]
+
+[sub css-news-body/
+	.news-body\n\}\n
+	[$css-lite-set]
+	[$css-repeater]
+	{
+		font-size: [num 12/16]px
+	}
+	\n\}\n
+]
+
+[sub css-no-bg @name/
+	[arg name]\n\{\n
+	[$css-repeater]
+	{
+		margin: [$element_margin]|
+		padding: [num 0/30]px|
+		color: [$color]|
+		font-family: "[$font]"|
+		font-style: {normal|italic|oblique}|
+		font-weight: {normal|bold|bolder}|
+		border-width: [num 0/10]px|
+		border-color: [$color]|
+		font-size: [num 12/30]px|
+		text-align: {left|right|center|justify}
+	}
+	\n\}\n
+]
+
+[isub num_styles/[num 2/5]]
+
+[isub styles/
+	\{
+		[rep [$num_styles]][sep \|]{[caps lower]<adj without [\s'-]>_<noun.plural without [\s'-]>[caps none]}
+	\}
+]

@@ -1,0 +1,187 @@
+``
+
+REQUIRED LIBRARIES:
+
+- css.mh
+- stanman.mh
+
+``
+anus
+[sub gen_title_default/
+	[isub title_default/
+		[caps proper]{<name>'s <adj> <noun.plural>|<adj> <verb.noun>|<noun> {World|Heaven|Center|Central}|<name>'s {<adj>|<noun>} {<noun>|<noun.plural>}}[caps none]
+	]
+]
+
+[sub gen_title_news/
+	[isub title_news/
+		[caps proper]{{<adj>|<noun>} {daily|express|news|informer}}[caps none]
+	]
+]
+
+[sub image/
+	[string img:{<adj> <noun.plural>|<noun> <noun.plural>|<verb.ing> <noun.plural>|{<noun>|<j>} <verb.ing> <noun>}]
+]
+
+[sub image-small/
+	[string img-small:{<adj> <noun.plural>|<noun> <noun.plural>|<verb.ing> <noun.plural>}]
+]
+
+[sub content/
+	[caps first]
+	[rep 1-6][sep \s]
+	{
+		[sync phrase/cdeck]
+		[before [caps first][chance 10]{[caps upper]}]
+		{
+			<noun.plural for a>... so many <noun.plural for a>.
+			|{All my life|For [num 2/50] <time-noun.plural>}, I have {endeavored|tried|longed} to <verb> <noun.plural>.
+			|<verb.noun for a> isn't <verb.noun for a> without {some|a little|a dash of|a bit of} {<substance>|<noun.plural>|<adj.ness>}.
+			|They say that <verb.noun> is {bad|good} for the <noun in body>... {That is <adj>|They lie|It's the [chance 50]{{fucking|goddamn}\s}truth|I believe it[chance 10]{ <adv>}}.
+			|And that{'s|\swas} when I [chance 50]{{finally|at last}\s}{realized|noticed}, {drinking|consuming|ingesting} <substance> is how I get my {<noun>|<substance>}.
+			|<name> once told me that for every <noun> that <verb.s>, a <noun> gets its <noun.plural>.
+			|I came to this place in hopes of finding the {long-lost|legendary|sacred} [caps proper]<noun>-<verb.er>[caps off].
+			|After I got <verb.ed>, I was <adv> <adj> with <adj.ness>. It was truly a <verb.ing> <time-noun> in my life.
+			|So here I am, <verb.ing> a <noun>, <verb.ing> my <noun in body> and {checking out|looking at|examining|spying} {this <noun>|my <rel>|some {guy|girl|kid|woman|man|dude}} <verb.ing> {in the corner|across from me}. {Is this what my life has come to|What has my life come to}?
+			|I {like|love|hate} <noun.plural>{.|!}
+			|Do you like {to <verb> <noun.plural>|<verb.ing> <noun.plural>}?
+			|I'm not sure whether my <noun> is <adj>, or I {just|simply} have a <adj> <noun in body>...
+			|[rep 6-14][caps first]{a|e|i|o|u|y}{.|?|!}
+			|I would love to <verb> your <noun> right now.
+			|Have you heard of <name> <surname>? [caps first]<p.nom for a>'s a {<adj> <noun><verb.er>|<j>|[num 1/10]-<noun in body> <noun in animal>|the {best|worst} <verb.er> of <noun.plural>}.
+			|For {some reason|reasons unknown}, <name> {likes to <verb>|enjoys <verb.ing>} <noun.plural> <adv>. {I think it's <em> <adj> of <p> to do|That's <adv> unacceptable|<x>}.
+			|<x>, what is going on with your <noun in body>? It's <em> <adj in appearance>{.|!}
+			|I think it's time to <verb> some <adj> <noun.plural>{.|!}
+		}
+	}
+	[caps none]
+]
+
+[sub list/
+	[$html_block div/{class|[sync __list/uniform][$styles]}/
+		[caps first]
+		{{Reasons|This is|Here's} why|Why} {<noun.plural> are <adj>|<noun.plural> should be <verb.ed> <adv>|<name> is <adj>|you are a <noun>-<verb.er>}:
+		[$html_tag p]
+		[$html_block ol/{class|[sync __list/uniform][$styles]}/
+			[rep 3-10]
+			{
+				[$html_inline li/{}/[caps first]
+					{
+						<noun.plural> are <adj>|
+						You're full of <substance>|
+						I don't want to <verb> your <noun>|
+						There are {too many|excessive|[num 2-36]} <noun.plural> in the <place>|
+						It's <em> <adj> to <verb> a <noun>|
+						Nobody likes a {<noun>-<verb.er>|<adj> <noun> <noun>|<verb-img.ing> <j>}|
+						It's {not possible|too {easy|simple|tedious}|impossible|possible|{within|outside of} reason} to {<verb> a <noun>|be <verb.ing> like that|be so <adj>|have [num 2/45] <noun.plural>}|
+						People get <adj> when someone <verb.s> in their <place>|
+						{I|You|<name>} <verb.ed> a <noun>|
+						<name> {agrees|thinks|says} that {you are|I am} {too <adj>|in no position|unfit|able} to <verb> any more <noun.plural>|
+						Nobody can {find|figure out} where <name> {hid|stashed} the <noun.plural>
+					}
+				]
+			}
+		]
+	]
+	[reseed __list/[rep 16]{[num 0/9]}]
+]
+
+[sub page_default/
+	[$html_comment Generated with Manhood - default template]
+	[$html
+		[$html_block head/{}/
+
+			[$gen_title_default]
+			[$html_inline title/{}/[$title_default]]
+
+			[$html_block style/{type|text\/css}/
+				[$css body]
+				[$css-header h1]
+				[$css-no-bg a]
+				[rep [$num_styles]][before [sync style_sync/ordered]]{[$css .[$styles]]}
+			]
+
+		]
+		[$html_block body/{}/
+
+			[$html_inline h1/{a|b}/[$title_default]]
+			[rep 10-16][sep [chance 10]{[$html_tag hr]}]
+			{			
+				[$html_inline a/{href|{[caps lower]<adj without [\s'-]><noun.plural without [\s'-]>[caps none]}}/
+						Click {here for {<verb.noun>|<adj> <noun.plural>|a <noun>}|to see a {<noun> get <verb.ed>|<adj> <noun>|<noun> <noun>}}][$html_tag p]|
+				[$html_inline img/{style|max-width:100%; height: auto;|src|[$image]}/]|
+				[$html_block div/{class|[$styles]}/[$content]]|
+				[$list]
+			}
+
+		]
+		[$html_tag hr]
+		[$html_inline span/{style|color: grey;}/[$html_inline i/{}/Webserver from Hell]]
+	]
+]
+
+`` Please rewrite this with stanman stuff BEFORE USE ``
+[sub page_news/
+	[$html_doctype]
+	[$html_comment Generated with Manhood - news template]
+	[$html_tag_block html/
+
+		[$gen_news_element_info]
+
+		[$html_tag_block head/
+
+			[$gen_title_news]
+			[$html_tag_line title/[$title_news]]
+
+			[$html_tag_block_a style/type="text\/css"/
+				html, body \{ height: 100%; \}\r\n
+				[$css body]
+				[$css-header h1]
+				[$css-news-main #news_main]
+				[$css-news-sidebar #news_sidebar]
+				[$css-news-headline]
+				[$css-news-body]
+				[$css-no-bg a]
+				[rep [$num_styles]][before [sync style_sync/ordered]]{[$css .[$styles]]}
+			]
+
+		]
+
+		[$html_tag_block body/
+
+			[$html_tag_line h1/[$title_news]]
+
+			[$html_tag_block_a div/style="width: 100%; display: table;"/
+
+				[$html_tag_block_a div/id="news_sidebar"/
+
+					[$html_tag_block_a div/style="padding: [$news_element_padding];"/
+						{See Also|{Other|Related|Similar} Stories|In Other News}
+					]
+
+				]
+
+				[$html_tag_block_a div/id="news_main"/
+
+					[$html_tag_block_a div/style="padding: [$news_element_padding];"/
+						[$html_tag_line_a p/id="headline"/[caps proper]{Shocking|Breaking}: <noun in animal> <verb.s> <noun>[caps none]]
+						[$html_tag_line_a img/style="max-width:100%; height: auto;" src="[$image]"/]
+						[rep 4-16][sep \n]
+						{
+							[$html_tag_block_a p/class="news-body"/
+								[rep 36][sep \s]{I like <noun.plural>!}
+							]
+						}
+					]
+				]
+			]
+
+			[$html_block div/{class|[$styles]}/Webserver From Hell]
+		]
+	]
+]
+
+[sub page/
+	[$gen_element_info]
+	[$page_default]
+]
