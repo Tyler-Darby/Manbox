@@ -8,20 +8,23 @@ Launch args:
 manbox.exe url=http://whatever:80 killkey=your-key-here
 ```
 
-URLs:
+###URLs
 
-**Kill server**
+
+####Kill server
 ```
 /kill/your-kill-key
 ```
 
-**Manbox**
+
+####Manbox
 ```
 /manbox
 /manbox#pattern-hash
 ```
 
-**Webserver From hell**
+
+####Webserver From hell
 ```
 /
 /{seed}
