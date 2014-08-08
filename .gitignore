@@ -6,7 +6,6 @@
 *.user
 *.sln.docstates
 jobs/*.*
-wsfh/cache/*.*
 *.xml
 *.exe.config
 dictionary/.git*
