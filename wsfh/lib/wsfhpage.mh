@@ -6,7 +6,7 @@ REQUIRED LIBRARIES:
 - stanman.mh
 
 ``
-anus
+
 [sub gen_title_default/
 	[isub title_default/
 		[caps proper]{<name>'s <adj> <noun.plural>|<adj> <verb.noun>|<noun> {World|Heaven|Center|Central}|<name>'s {<adj>|<noun>} {<noun>|<noun.plural>}}[caps none]
