@@ -9,7 +9,8 @@ jobs/*.*
 *.xml
 *.exe.config
 *.exe.manifest
-dictionary/.git*
+dictionary/*.dic
+/wsfh/cache/*.html
 
 # Build results
 [Dd]ebug/

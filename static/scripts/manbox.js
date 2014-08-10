@@ -7,7 +7,7 @@ window.onload = function()
 		mh_running = true;
 		$.ajax({
 			type: "POST",
-			url: "fetch",
+			url: "manbox/fetch",
 			data: { Hash: window.location.hash }
 		})
 		
@@ -48,7 +48,7 @@ function runPat()
 	var pattern = document.getElementById("input").value;
 	$.ajax({
 		type: "POST",
-		url: "run",
+		url: "manbox/run",
 		data: { Code: pattern }
 	})
 	
