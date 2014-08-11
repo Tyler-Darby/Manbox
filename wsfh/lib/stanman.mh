@@ -45,4 +45,13 @@ SOFTWARE.
 	
 	[sub once @id pattern/[ifndef __ONCE_[arg id]/[define __ONCE_[arg id]][evalarg pattern]]
 	[sub again @id/[undef __ONCE_[arg id]]]
+	
+	[sub share @f1 @f2/[ifdef [arg f1]/[define [arg f2]]][else [undef [arg f2]]]]
+	[sub polarize @f1 @f2/[ifdef [arg f1]/[undef [arg f2]]][else [define [arg f2]]]]
+	
+	[sub box @w @h/[rs [arg h]/\n]{[r [arg w]]{[notmiddle [first [undef ROW_END]][last [define ROW_END]][up 1][first [undef COL_END]][up 1][last [define COL_END]][up 1][middle \u2551][up 1][notmiddle [ifdef ROW_END/[ifdef COL_END/\u255d][else \u2557]][else [ifdef COL_END/\u255a][else \u2554]]]][middle [up 1][notmiddle \u2550][up 1][middle \s]]}}]
+	
+	[sub snake @input/[replace [arg input]/((?<c>[Ss])|[Tt](?<c>[Hh]))/[match][c 75]{[r 2-5]{[match c]}}]]
+	[sub stutter @input/[replace [arg input]/(?<word>[a-zA-Z]{2,})(?=\s[a-zA-Z]+)/[rs 1-3/...\s]{[match word]}]]
+	[sub stammer @input/[replace [arg input]/(?<prev>(^|"|\s))(?<letter>[PpGgBbMmNnTtFfCcKk])/[match prev][rep {1|2}-3][sep -]{[match letter]}]]
 ]
