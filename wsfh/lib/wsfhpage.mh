@@ -56,7 +56,7 @@ REQUIRED LIBRARIES:
 	[before [sync phrase/cdeck][before [caps first][chance 10]{[caps upper]}]]
 	{
 		[pick 10/
-			[to 6/[$_random_text]]
+			[to 6/]
 			[to 7/[$stammer [$_random_text]]]
 			[to 8/[$stutter [$_random_text]]]
 			[to 9/[$slur [$_random_text]]]
@@ -118,7 +118,7 @@ REQUIRED LIBRARIES:
 			{	
 				[pick 100/
 					`` Text ``
-					[to 40/[$html_block div/{class|[$styles]}/[$_random_text]]]
+					[to 40/[$html_block div/{class|[$styles]}/[$random_text]]]
 					
 					`` Link ``
 					[to 60/[$html_inline a/{href|{[caps lower]<adj without [\s'-]><noun.plural without [\s'-]>[caps none]}}/
