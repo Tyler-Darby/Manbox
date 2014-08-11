@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ``
+
 [ifndef __STANMAN__/
 [define __STANMAN__]
 	[sub letter/{a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z}]
@@ -43,7 +44,7 @@ SOFTWARE.
 
 	[sub an_convert @input/[replace [arg input]/(?<a>(^|\s)[Aa])\s(?<letter>[AaEeIiOoUu])/[match a]n [match letter]]]
 	
-	[sub once @id pattern/[ifndef __ONCE_[arg id]/[define __ONCE_[arg id]][evalarg pattern]]
+	[sub once @id pattern/[ifndef __ONCE_[arg id]/[define __ONCE_[arg id]][evalarg pattern]]]
 	[sub again @id/[undef __ONCE_[arg id]]]
 	
 	[sub share @f1 @f2/[ifdef [arg f1]/[define [arg f2]]][else [undef [arg f2]]]]
