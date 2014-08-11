@@ -27,13 +27,8 @@ REQUIRED LIBRARIES:
 	[string img-small:{<adj> <noun.plural>|<noun> <noun.plural>|<verb.ing> <noun.plural>}]
 ]
 
-[sub content/
-	[caps first]
-	[rep 1-6][sep \s]
+[sub _random_text/
 	{
-		[sync phrase/cdeck]
-		[before [caps first][chance 10]{[caps upper]}]
-		{
 			<noun.plural for a>... so many <noun.plural for a>.
 			|{All my life|For [num 2/50] <time-noun.plural>}, I have {endeavored|tried|longed} to <verb> <noun.plural>.
 			|<verb.noun for a> isn't <verb.noun for a> without {some|a little|a dash of|a bit of} {<substance>|<noun.plural>|<adj.ness>}.
@@ -52,7 +47,16 @@ REQUIRED LIBRARIES:
 			|For {some reason|reasons unknown}, <name> {likes to <verb>|enjoys <verb.ing>} <noun.plural> <adv>. {I think it's <em> <adj> of <p> to do|That's <adv> unacceptable|<x>}.
 			|<x>, what is going on with your <noun in body>? It's <em> <adj in appearance>{.|!}
 			|I think it's time to <verb> some <adj> <noun.plural>{.|!}
-		}
+			|[rs 8-24/\sand\s]{<noun.plural>|<verb.noun>}...
+	}
+]
+
+[sub random_text/
+	[rep 1-6][sep \s]
+	[before [sync phrase/cdeck][before [caps first][chance 10]{[caps upper]}]]
+	{
+		[$_random_text]
+		|[icall {stammer|stutter|slur|snake}/[$_random_text]]
 	}
 	[caps none]
 ]
@@ -109,10 +113,10 @@ REQUIRED LIBRARIES:
 			{	
 				[pick 100/
 					`` Text ``
-					[to 30/[$html_block div/{class|[$styles]}/[$content]]]
+					[to 40/[$html_block div/{class|[$styles]}/[$_random_text]]]
 					
 					`` Link ``
-					[to 50/[$html_inline a/{href|{[caps lower]<adj without [\s'-]><noun.plural without [\s'-]>[caps none]}}/
+					[to 60/[$html_inline a/{href|{[caps lower]<adj without [\s'-]><noun.plural without [\s'-]>[caps none]}}/
 							Click {here for {<verb.noun>|<adj> <noun.plural>|a <noun>}|to see a {<noun> get <verb.ed>|<adj> <noun>|<noun> <noun>}}][$html_tag p]
 					]
 							

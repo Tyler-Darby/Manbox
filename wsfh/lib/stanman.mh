@@ -54,4 +54,5 @@ SOFTWARE.
 	[sub snake @input/[replace [arg input]/((?<c>[Ss])|[Tt](?<c>[Hh]))/[match][c 75]{[r 2-5]{[match c]}}]]
 	[sub stutter @input/[replace [arg input]/(?<word>[a-zA-Z]{2,})(?=\s[a-zA-Z]+)/[rs 1-3/...\s]{[match word]}]]
 	[sub stammer @input/[replace [arg input]/(?<prev>(^|"|\s))(?<letter>[PpGgBbMmNnTtFfCcKk])/[match prev][rep {1|2}-3][sep -]{[match letter]}]]
+	[sub slur @input/[replace [arg input]/[sjkgfn]/[pick 10/[to 3/[match]]{j|g|h|th|ph|fff|b}]]]
 ]
