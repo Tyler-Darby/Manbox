@@ -107,7 +107,7 @@ REQUIRED LIBRARIES:
 			[$html_inline h1/{a|b}/[$title_default]]
 			[rep 10-16][sep [chance 10]{[$html_tag hr]}]
 			{	
-				[pick 100
+				[pick 100/
 					`` Text ``
 					[to 30/[$html_block div/{class|[$styles]}/[$content]]]
 					
