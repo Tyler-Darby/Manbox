@@ -56,7 +56,7 @@ REQUIRED LIBRARIES:
 	[rep 1-6][sep \s]
 	{
 		[pick 20/
-			[to 10/[$_random_text]]
+			``[to 10/[$_random_text]]``
 			[to 12/[$stammer [$_random_text]]]
 			[to 14/[$stutter [$_random_text]]]
 			[to 16/[$slur [$_random_text]]]
