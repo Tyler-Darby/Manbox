@@ -56,7 +56,7 @@ REQUIRED LIBRARIES:
 	[before [sync phrase/cdeck][before [caps first][chance 10]{[caps upper]}]]
 	{
 		[pick 10/
-			[to 6/]
+			[to 6/[$_random_text]]
 			[to 7/[$stammer [$_random_text]]]
 			[to 8/[$stutter [$_random_text]]]
 			[to 9/[$slur [$_random_text]]]
