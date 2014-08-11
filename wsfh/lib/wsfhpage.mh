@@ -9,7 +9,7 @@ REQUIRED LIBRARIES:
 
 [sub gen_title_default/
 	[isub title_default/
-		[caps proper]{<name>'s <adj> <noun.plural>|<adj> <verb.noun>|<noun> {World|Heaven|Center|Central}|<name>'s {<adj>|<noun>} {<noun>|<noun.plural>}}[caps none]
+		[caps proper]{<name>'s <adj> <noun.plural>|<adj> <verb.noun>|<noun> {World|Heaven|Center|Central|Emporium}|<name>'s {<adj>|<noun>} {<noun>|<noun.plural>}|<verb> my <adj> <noun>|<verb.noun> for the <noun>}[caps none]
 	]
 ]
 
@@ -20,7 +20,7 @@ REQUIRED LIBRARIES:
 ]
 
 [sub image/
-	[string img:{<adj> <noun.plural>|<noun> <noun.plural>|<verb.ing> <noun.plural>|{<noun>|<j>} <verb.ing> <noun>}]
+	[string img:{<adj> <noun.plural>|<noun> <noun.plural>|<verb.ing> <noun.plural>|{<noun>|<j>} <verb.ing> <noun>|[r 3-4][$letter]}]
 ]
 
 [sub image-small/
