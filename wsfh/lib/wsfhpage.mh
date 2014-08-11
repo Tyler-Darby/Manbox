@@ -28,6 +28,7 @@ REQUIRED LIBRARIES:
 ]
 
 [sub _random_text/
+	[sync phrase/cdeck][before [caps first][chance 10]{[caps upper]}]
 	{
 			<noun.plural for a>... so many <noun.plural for a>.
 			|{All my life|For [num 2/50] <time-noun.plural>}, I have {endeavored|tried|longed} to <verb> <noun.plural>.
@@ -53,7 +54,6 @@ REQUIRED LIBRARIES:
 
 [sub random_text/
 	[rep 1-6][sep \s]
-	[before [sync phrase/cdeck][before [caps first][chance 10]{[caps upper]}]]
 	{
 		[pick 10/
 			[to 6/[$_random_text]]
