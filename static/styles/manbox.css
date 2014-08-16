@@ -24,7 +24,7 @@ a:visited
 body 
 {
 	background-color: #e0e0e0;
-	background-image: url('bgnoise.png');
+	background-image: url('/static/bgnoise.png');
 	background-attachment: fixed;
 	cursor: default;
 }
@@ -95,7 +95,7 @@ h1
 
 textarea, input
 {
-	background-image: url('bgnoise.png');
+	background-image: url('/static/bgnoise.png');
 	background-attachment: fixed;
 	outline: none !important;
 	font-size: 12pt;
