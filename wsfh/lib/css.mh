@@ -68,7 +68,7 @@
 		margin: [$element_margin]|
 		padding: [num 0/30]px|
 		font-size: [num 12/30]px|
-		background-image: {url("[$image-small]")|none|none|none}
+		background-image: {url\("[$image-small]"\)|none|none|none}
 	}
 	\n\}\n
 ]
