@@ -1,23 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<title>Manhood :: The flexible, powerful, and concise language for generating text</title>
-		<link rel="stylesheet" type="text/css" href="../static/styles/manhood.css"/>
-	</head>
-	<body>
-		<div id="container">
-			<div id="header">
-				<img id="biglogo" src="../static/manhood_logo_big.png"></img>
-				<div id="bigtitle">GENERATING TEXT HAS NEVER BEEN THIS SIMPLE.</div>
-			</div>
-			<ul class="navbar">
-				<li>Fuck</li>
-				<li>Shit</li>
-				<li>Piss</li>
-			</ul>
-			<div id="content">
-				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-			</div>
-		</div>
-	</body>
+  <head>
+    <title>Manhood</title>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+    <link href='/static/styles/manhood.css' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo"></div>
+      <div class="slogan"><span class="rnd">Writing a nonsensical screenplay</span> has<br> never been this <span class="simple">simple</span>.</div>
+      <div class="example">
+        "After I got twerked, I was violently miserly with Norwegian heritage. It was truly a sitting July in my life. Do you like to choke vials? I came to this place in hopes of finding the sacred Cannon-liquidator. Oh dear, what is going on with your boner? It's rather wet. Jake once told me that for every ballsack that withdraws, a chihuahua gets its feces. All my life, I have tried to examine chainsaws. Birungi once told me that for every canister that tickles, a microscope gets its motorcycles. For some reason, Gus likes to manhandle bulldogs coaxingly. That's busily unacceptable. Wasting isn't wasting without a little oil."
+      </div>
+      <div class="cta">Download</div><hr>
+    </div>
+    <script>
+      var x = setInterval(sxs, 2000);
+      var xs = ["Writing a funny story", "Randomizing a page layout", "Creating unique character names", "Writing a nonsensical screenplay", "Generating HTML", "Adding rich, diverse text to games", "Answering scam e-mails"];
+      var xx = 0;
+      function sxs() {
+        $('.rnd').fadeOut('fast', function() {
+          var xv = Math.floor(Math.random() * xs.length);
+          if(xv != xx) {
+            $('.rnd').text(xs[xv]).fadeIn('fast');
+            console.log('passed')
+            xx = xv;
+          } else {
+          	sxs();
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
