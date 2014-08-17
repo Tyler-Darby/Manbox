@@ -32,7 +32,7 @@ body {
 }
 
 .slogan .simple {
-	font-style: italic;
+	text-decoration: underline;
 }
 
 .cta {
