@@ -49,7 +49,7 @@ function runPat()
 	$.ajax({
 		type: "POST",
 		url: "/manbox/run",
-		data: { Code: pattern }
+		data: { code: pattern, nsfw: "false" }
 	})
 	
 	.done(function(response)
