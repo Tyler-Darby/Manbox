@@ -36,7 +36,7 @@ body {
 }
 
 .slogan .simple {
-	text-decoration: underline;
+	font-weight: bolder;
 }
 
 .cta {
