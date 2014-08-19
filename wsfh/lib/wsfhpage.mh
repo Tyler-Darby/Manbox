@@ -44,8 +44,8 @@ REQUIRED LIBRARIES:
 			|I'm not sure whether my <noun> is <adj>, or I {just|simply} have a <adj> <noun in body>...
 			|[rep 6-14][caps first]{a|e|i|o|u|y}{.|?|!}
 			|I would love to <verb> your <noun> right now.
-			|Have you heard of <name> <surname>? [caps first]<p.nom for a>'s a {<adj> <noun><verb.er>|<j>|[num 1/10]-<noun in body> <noun in animal>|the {best|worst} <verb.er> of <noun.plural>}.
-			|For {some reason|reasons unknown}, <name> {likes to <verb>|enjoys <verb.ing>} <noun.plural> <adv>. {I think it's <em> <adj> of <p> to do|That's <adv> unacceptable|<x>}.
+			|Have you heard of <name> <surname>? [caps first]<pron.nom for a>'s a {<adj> <noun><verb.er>|<job>|[num 1/10]-<noun in body> <noun in animal>|the {best|worst} <verb.er> of <noun.plural>}.
+			|For {some reason|reasons unknown}, <name> {likes to <verb>|enjoys <verb.ing>} <noun.plural> <adv>. {I think it's <em> <adj> of <pron> to do|That's <adv> unacceptable|<x>}.
 			|<x>, what is going on with your <noun in body>? It's <em> <adj in appearance>{.|!}
 			|I think it's time to <verb> some <adj> <noun.plural>{.|!}
 			|[rs 8-24/\sand\s]{<noun.plural>|<verb.noun>}...
