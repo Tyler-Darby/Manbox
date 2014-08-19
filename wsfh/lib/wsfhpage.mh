@@ -121,7 +121,7 @@ REQUIRED LIBRARIES:
 					[to 60/[$html_block div/{class|[$styles]}/[$random_text]]]
 					
 					`` Link ``
-					[to 80/[$html_inline a/{href|{[caps lower]<adj without [\s'-]><noun.plural without [\s'-]>[caps none]}}/
+					[to 80/[$html_inline a/{href|\/hell\/{[caps lower]<adj without [\s'-]><noun.plural without [\s'-]>[caps none]}}/
 							Click {here for {<verb.noun>|<adj> <noun.plural>|a <noun>}|to see a {<noun> get <verb.ed>|<adj> <noun>|<noun> <noun>}}][$html_tag p]
 					]
 							
