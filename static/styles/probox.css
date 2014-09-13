@@ -3,12 +3,39 @@ p { font-size: 10pt; }
 
 a
 {
-	color: #1070e3;   
+	color: #ddd;   
+	text-decoration: none;
 }
 
 a:visited
 {
-	color: #c04093;   
+	color: #ddd;   
+}
+
+#top
+{
+	font-size: 11pt;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 3px 3px 3px 0px;
+}
+
+.topitem
+{
+	padding: 8px 8px 8px 4px;
+	margin: 6px 6px 6px 0px;
+	background-color: #222222;
+	-webkit-transition: width 0.3s, height 0.3s;
+	transition: width 0.3s, padding-top 0.3s, padding-bottom 0.3s;
+	width: 100%;
+}
+
+.topitem:hover
+{
+	width: 130%;
+	padding-top: 12px;
+	padding-bottom: 12px;
 }
 
 .left
@@ -50,8 +77,8 @@ h1
 	font-size: 16pt;
 	padding: 6px;
 	background-color: #ccc;
-	border-radius: 8px;
-	margin-top: 4px;
+	/*border-radius: 8px;*/
+	margin: 5px 4px 0px 4px;
 }
 
 .button:hover
@@ -66,7 +93,7 @@ h1
 
 .mod_text 
 {
-	font-size: 14pt;
+	font-size: 13pt;
 	color: #e0e0e0;
 	padding-left: 6px;
 	padding-bottom: 5px;
@@ -87,8 +114,8 @@ h1
 	position: relative;
 	display: inline-block;
 	text-align: left;
-	background-color: #224066;
-	border-radius: 10px;
+	background-color: #222256;
+	/*border-radius: 10px;*/
 	padding: 6px;
 	margin: 4px;
 }
@@ -100,14 +127,14 @@ textarea, input
 	outline: none !important;
 	font-size: 12pt;
 	font-family: Courier;
-	border-radius: 6px;
+	/*border-radius: 6px;*/
 	border-style: none;
 }
 
 textarea
 {
 	font-family: Courier;
-	border-radius: 6px;
+	/*border-radius: 6px;*/
 	border-style: none;
 }
 
