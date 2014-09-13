@@ -43,7 +43,9 @@ function runPat()
 	}
 	
 	mh_running = true;
-	document.getElementById("loading").style.display = "block";
+	var loading = document.getElementById("loading");
+	loading.style.visibility = "visible";
+	loading.style.opacity = 100;
 	
 	var pattern = document.getElementById("input").value;
 	$.ajax({
@@ -71,8 +73,11 @@ function runPat()
 	    $("#hash").val(createHashLink(json["hash"]));
 		$("#hashfield").css("display", "block");
 		
-		window.location.hash = "#" + json["hash"];
-		document.getElementById("loading").style.display = "none";
+		var loading = document.getElementById("loading");
+		loading.style.visibility = "hidden";
+		loading.style.opacity = 0;
+		
+		window.location.hash = "#" + json["hash"];		
 		mh_running = false;
 	});		
 }
