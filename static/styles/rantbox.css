@@ -35,7 +35,7 @@ a:visited
 	width: 130%;
 	padding-top: 12px;
 	padding-bottom: 12px;
-	background-color: #222256;
+	background-color: #200c30;
 }
 
 .left
@@ -114,8 +114,7 @@ h1
 	position: relative;
 	display: inline-block;
 	text-align: left;
-	background-color: #222256;
-	/*border-radius: 10px;*/
+	background-color: #200c30;
 	padding: 6px;
 	margin: 4px;
 }
