@@ -13,6 +13,7 @@ dictionary/*.dic
 /wsfh/cache/*.html
 
 # Build results
+*.sln.ide/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
