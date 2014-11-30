@@ -2,6 +2,10 @@ var mh_running = false;
 
 window.onload = function()
 {	
+	var cbNsfw = document.getElementById("nsfw");
+	cbNsfw.checked = $.cookie("nsfw") === "true";
+	cbNsfw.onchange = function() { $.cookie("nsfw", cbNsfw.checked); }
+
 	if (window.location.hash.length > 0)
 	{
 		mh_running = true;
