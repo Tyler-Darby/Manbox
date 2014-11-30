@@ -7,7 +7,7 @@ window.onload = function()
 		mh_running = true;
 		$.ajax({
 			type: "POST",
-			url: "/probox/fetch",
+			url: "/rantbox/fetch",
 			data: { Hash: window.location.hash }
 		})
 		
@@ -48,10 +48,12 @@ function runPat()
 	loading.style.opacity = 100;
 	
 	var pattern = document.getElementById("input").value;
+	var dirty = document.getElementById("nsfw").checked;
+	
 	$.ajax({
 		type: "POST",
-		url: "/probox/run",
-		data: { code: pattern, nsfw: "true" }
+		url: "/rantbox/run",
+		data: { code: pattern, nsfw: dirty }
 	})
 	
 	.done(function(response)

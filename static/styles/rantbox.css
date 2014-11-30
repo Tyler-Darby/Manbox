@@ -91,12 +91,19 @@ h1
 	background-color: #eea;   
 }
 
-.mod_text 
+.subheading 
 {
 	font-size: 13pt;
 	color: #e0e0e0;
 	padding-left: 6px;
 	padding-bottom: 5px;
+}
+
+#options
+{
+	color: #e0e0e0;
+	font-size: 11pt;
+	margin: 4px;
 }
 
 .small
@@ -117,6 +124,18 @@ h1
 	background-color: #200c30;
 	padding: 6px;
 	margin: 4px;
+}
+
+label
+{
+	margin: 5px;
+	margin-left: 3px;
+}
+
+label, input
+{
+	display: inline-block;
+	vertical-align: middle;
 }
 
 textarea, input
@@ -140,7 +159,6 @@ textarea
 input
 {
 	color: #666666;
-	width: 100%;
 	padding: 3px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;

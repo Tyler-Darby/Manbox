@@ -12,7 +12,7 @@
 		<script src="/static/scripts/mousetrap.min.js"></script>
 		<script src="/static/scripts/tabby.js"></script>
 		<script src="/static/scripts/querystring.js"></script>
-        <script src="/static/scripts/probox.js"></script>
+        <script src="/static/scripts/rantbox.js"></script>
     </head>
     
     <body>     
@@ -39,12 +39,17 @@
 			<a href="https://github.com/TheBerkin/Rant"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>			
 			<div>
 				<div class="module_inner">
-					<div class="mod_text">Pattern</div>
+					<div class="subheading">Pattern</div>
 					<textarea id="input" class="mousetrap" rows="8" cols="48" wrap="off" spellcheck="false"></textarea>
 					<script>$('textarea#input').tabby({tabString:'    '});</script>
-					<div id="hashfield">
-						<div class="mod_text small">Permalink</div>
-						<input type="text" id="hash" readonly="true" onclick="this.select();">
+					
+					<div id="hashfield">						
+						<div class="subheading small">Permalink</div>
+						<input type="text" id="hash" readonly="true" onclick="this.select();" style="width: 100%;">						
+					</div>
+					
+					<div id="options">
+							<label><input type="checkbox" id="nsfw">Allow NSFW content</input></label>
 					</div>
 					
 					<div class="btn_container">
@@ -55,7 +60,7 @@
             
 			<div>
 				<div class="module_inner">
-					<div class="mod_text">Output</div>
+					<div class="subheading">Output</div>
 					<div>
 						<textarea id="output" readonly="true" rows="8" cols="48"></textarea>
 						<div id="loading">
