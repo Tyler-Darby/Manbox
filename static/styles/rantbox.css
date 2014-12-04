@@ -1,4 +1,4 @@
-* { font-family: Verdana, Arial, sans-serif; }
+body { font-family: Verdana, Arial, sans-serif; }
 p { font-size: 10pt; }
 
 a
@@ -145,14 +145,12 @@ textarea, input
 	outline: none !important;
 	font-size: 12pt;
 	font-family: Courier;
-	/*border-radius: 6px;*/
 	border-style: none;
 }
 
 textarea
 {
 	font-family: Courier;
-	/*border-radius: 6px;*/
 	border-style: none;
 }
 
@@ -168,6 +166,7 @@ input
 #hashfield
 {
 	display: none;
+	padding-top: 5px;
 }
 
 #loading
