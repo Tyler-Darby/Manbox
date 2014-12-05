@@ -12,13 +12,19 @@ a:visited
 	color: #ddd;   
 }
 
-#top
+body 
 {
-	font-size: 11pt;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	margin: 3px 3px 3px 0px;
+	background-color: #e0e0e0;
+	background-image: url('/static/bgnoise.png');
+	background-attachment: fixed;
+	cursor: default;
+}
+
+h1
+{ 
+	font-size: 32pt;
+	color: #000000;
+	margin: 0px;
 }
 
 .topitem
@@ -46,21 +52,6 @@ a:visited
 .right
 {
 	float: right;   
-}
-
-body 
-{
-	background-color: #e0e0e0;
-	background-image: url('/static/bgnoise.png');
-	background-attachment: fixed;
-	cursor: default;
-}
-
-h1
-{ 
-	font-size: 32pt;
-	color: #000000;
-	margin: 0px;
 }
 
 .btn_container
@@ -99,29 +90,17 @@ h1
 	padding-bottom: 5px;
 }
 
-#options
-{
-	color: #e0e0e0;
-	font-size: 11pt;
-	margin: 4px;
-}
-
 .small
 {
 	font-size: 11pt;
 }
 
-#main_container
-{
-	text-align: center;   
-}
-
-.module_inner
+.module
 {
 	position: relative;
 	display: inline-block;
 	text-align: left;
-	background-color: #200c30;
+	background-color: #1a0c20;
 	padding: 6px;
 	margin: 4px;
 }
@@ -163,10 +142,31 @@ input
 	-webkit-box-sizing: border-box;
 }
 
+#top
+{
+	font-size: 11pt;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 3px 3px 3px 0px;
+}
+
+#main_container
+{
+	text-align: center;   
+}
+
 #hashfield
 {
 	display: none;
 	padding-top: 5px;
+}
+
+#options
+{
+	color: #e0e0e0;
+	font-size: 11pt;
+	margin: 4px;
 }
 
 #loading

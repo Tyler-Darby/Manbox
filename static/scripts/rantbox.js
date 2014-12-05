@@ -5,9 +5,11 @@ window.onload = function()
 {	
 	editor = CodeMirror.fromTextArea(document.getElementById("input"), {
 		mode: "rant",
-		lineNumbers: true
+		lineNumbers: true,
+		theme: "neat"
 	});
 	editor.setSize(450, 200);
+	Mousetrap.bind("ctrl+enter", runPat);
 	
 	var cbNsfw = document.getElementById("nsfw");
 	cbNsfw.checked = $.cookie("nsfw") === "true";
@@ -95,8 +97,6 @@ function runPat()
 	});		
 }
 
-Mousetrap.bind("ctrl+enter", runPat);
-
 var keywords = [
 	"[rs](?:ep)?", "n", "num", "after", "all", "any", "arg", "before", "branch", "break", "capsinfer", "case", "caps",
 	"chance", "char", "close", "clrt", "cmp", "define", "dist", "else", "even", "extern", "(?:not)?first", "g", "generation",
@@ -107,14 +107,15 @@ var keywords = [
 
 CodeMirror.defineSimpleMode("rant", {
 	start: [
+		{regex: /((?:^|[^\\])\[)(\?)/, token: [null, "strong"]},
 		{regex: /\\((?:\d+,)?(?:[^u\s\r\n]|u[0-9a-f]{4}))/, token: "string"},
-		{regex: new RegExp("((?:^|[^\\\\])\\[)([$]\\w+|" + keywords + ")(?:[:\\]])", "i"), token: [null, "def"]},
-		{regex: /((?:^|[^\\])\[)(%\w+)/, token: [null, "variable-3"]},
+		{regex: new RegExp("((?:^|[^\\\\])\\[)([$]\\w+|" + keywords + ")(?:[:\\]])", "i"), token: [null, "keyword"]},
+		{regex: /((?:^|[^\\])\[)(%[:=!]?\w+)/, token: [null, "variable-3"]},
 		{regex: /#.*/, token: "comment"},
 		{regex: /\/\/(.*?[^\\])?\/\/i?/, token: "string"},
 		{regex: /(^|[^\\])("(?:(?:[^"]|"")*)?")/, token: [null, "string"]},
-		{regex: /(^|[^\\])(\<(?:.|[\r\n])*?[^\\]\>)/g, token: [null, "string-2"]},
-		{regex: /((?:^|[^\\])\[)(\$\??)(\[.*?\])/, token: [null, "qualifier", "def"]}
+		{regex: /(^|[^\\])(\<(?:.|[\r\n])*?[^\\]\>)/g, token: [null, "atom"]},
+		{regex: /((?:^|[^\\])\[)(\$\??)(\[.*?\])/, token: [null, "qualifier", "def"]}		
 	],
 	meta: {
 		dontIndentStates: ["comment"],
