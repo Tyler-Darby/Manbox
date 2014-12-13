@@ -10,8 +10,8 @@ namespace Manbox
     {
         public static readonly bool IsMono;
         
-        private static readonly RantVocabulary VocabClean;
-        private static readonly RantVocabulary VocabDirty;
+        private static readonly RantDictionary VocabClean;
+        private static readonly RantDictionary VocabDirty;
 
         public static RantEngine CreateEngine(bool nsfw = false)
         {
@@ -39,8 +39,8 @@ namespace Manbox
         static _()
         {
             IsMono = Type.GetType("Mono.Runtime") != null;
-            VocabClean = RantVocabulary.FromDirectory("dictionary", NsfwFilter.Disallow);
-            VocabDirty = RantVocabulary.FromDirectory("dictionary", NsfwFilter.Allow);
+            VocabClean = RantDictionary.FromDirectory("dictionary", NsfwFilter.Disallow);
+            VocabDirty = RantDictionary.FromDirectory("dictionary", NsfwFilter.Allow);
         } 
     }
 }

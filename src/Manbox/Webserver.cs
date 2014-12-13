@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using Nancy;
 using Nancy.Helpers;
+using Nancy.Responses;
 
 using Newtonsoft.Json.Linq;
 
@@ -85,22 +86,6 @@ namespace Manbox
             Get["/rantbox/lorem_ipsum"] = p => _manhood.Do(LoremIpsum).MainValue;
         }
 
-        public static string GeneratePageName()
-        {
-            return _manhood.Do(@"[caps lower]<adj without [\\s'-]><noun.plural without [\\s'-]>");
-        }
-
-        public static long HellHash(string input)
-        {
-            long seed = 47;
-            foreach (char c in input)
-            {
-                seed += c + 11;
-                seed *= 12345;
-            }
-            return seed;
-        }
-
         private static string GenerateKey()
         {
             RNG rng = new RNG();
@@ -122,45 +107,6 @@ namespace Manbox
             catch
             {
                 return "";
-            }
-        }
-
-        private static string RunSatan(string seed)
-        {
-            try
-            {
-                var args = String.Concat("dicpath=../dictionary do=", seed);
-
-                var psi = new ProcessStartInfo
-                {
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    WorkingDirectory = "wsfh",
-                    FileName = _.IsMono ? "mono" : "wsfh/Satan.exe",
-                    Arguments = _.IsMono ? "Satan.exe " + args : args
-                };
-
-                var proc = Process.Start(psi);
-
-                if (proc == null)
-                {
-                    return "Interpreter failed to run.";
-                }
-
-                if (!proc.WaitForExit(MaxSatanExecutionTime))
-                {
-                    proc.Kill();
-                    return "Satan could not make your page fast enough. Reload the page and hopefully he will do better.";
-                }
-                
-                var error = proc.StandardError.ReadToEnd();
-                var output = proc.StandardOutput.ReadToEnd();
-                return error.Any() ? error : output;
-            }
-            catch (Exception ex)
-            {
-                return ex.ToString();
             }
         } 
 
