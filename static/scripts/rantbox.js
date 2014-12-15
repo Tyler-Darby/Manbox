@@ -111,7 +111,7 @@ function runPat()
 }
 
 var keywords = [
-	"[rs](?:ep)?", "n", "num", "after", "all", "any", "arg", "before", "branch", "break", "capsinfer", "case", "caps",
+	"[rs](?:ep)?", "n", "num", "after", "alt", "any", "arg", "before", "branch", "break", "capsinfer", "case", "caps",
 	"chance", "char", "close", "clrt", "cmp", "define", "dist", "else", "even", "extern", "(?:not)?first", "g", "generation",
 	"get", "group", "if[n]?def", "is", "(?:not)?last", "len", "merge", "(?:not)?middle", "nth", "numfmt", "mark", "match",
 	"odd", "osend", "out", "repcount", "rc", "repindex", "ri", "repnum", "rn", "send", "src", "step", "undef", "x", "xnew",
