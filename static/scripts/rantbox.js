@@ -110,7 +110,7 @@ function runPat()
 	});		
 }
 
-var keywords = [
+var rantKeywords = [
 	"[rs](?:ep)?", "n", "num", "after", "alt", "any", "arg", "before", "branch", "break", "capsinfer", "case", "caps",
 	"chance", "char", "close", "clrt", "cmp", "define", "dist", "else", "even", "extern", "(?:not)?first", "g", "generation",
 	"get", "group", "if[n]?def", "is", "(?:not)?last", "len", "merge", "(?:not)?middle", "nth", "numfmt", "mark", "match",
@@ -118,11 +118,20 @@ var keywords = [
 	"xnone", "xpin", "xreset", "xseed", "xunpin"
 	].join("|");
 
+var rantModes = [
+	"lower", "upper", "sentence", "word", "title", "none",
+	"normal", "roman(?:[-_](?:upper|lower))?", "group(?:[-_](?:commas|dots))?", "verbal[-_]en",
+	"locked", "c?deck", "ordered", "reverse",
+	"public", "private", "internal",
+	"different", "(?:not[-_])?equal", "less", "greater", "none", "one", "all", "any"
+].join("|");
+
 CodeMirror.defineSimpleMode("rant", {
 	start: [
 		{regex: /((?:^|[^\\])\[)(\?)/, token: [null, "keyword"]},
 		{regex: /\\((?:\d+,)?(?:[^u\s\r\n]|u[0-9a-f]{4}))/, token: "string"},
-		{regex: new RegExp("((?:^|[^\\\\])\\[)([$]\\w+|" + keywords + ")(?:[:\\]])", "i"), token: [null, "keyword"]},
+		{regex: new RegExp("((?:^|[^\\\\])\\[)([$]\\w+|" + rantKeywords + ")(?:[:\\]])", "i"), token: [null, "keyword"]},
+		{regex: new RegExp("([:;]\\s*)(" + rantModes + ")\\s*(?=[;\\]])", "i"), token: [null, "atom strong"]},
 		{regex: /((?:^|[^\\])\[)(%[:=!]?\w+)(\s*(?:\+\^?\%?|\=\@?|![@^$]?|\$\^?|\@[?^$]?))?/, token: [null, "keyword", "strong"]},
 		{regex: /(^|[^\\])\{\%\s*\w+\s*[^\\]\}/, token: "em"},
 		{regex: /#.*/, token: "comment"},
