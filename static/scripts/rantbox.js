@@ -3,14 +3,27 @@ var editor = undefined;
 
 window.onload = function()
 {	
+	// Poop out a code editor
 	editor = CodeMirror.fromTextArea(document.getElementById("input"), {
 		mode: "rant",
 		lineNumbers: true,
 		theme: "neat"
 	});
+	
+	// Make it a reasonable size
 	editor.setSize(450, 200);
+	
+	// Make it resizable
+	$(editor.getWrapperElement()).resizable({
+		resize: function() {
+			editor.setSize($(this).width(), $(this).height());
+		}
+	});
+	
+	// Keyboard shortcut that doesn't work
 	Mousetrap.bind("ctrl+enter", runPat);
 	
+	// Make the NSFW setting save to a cookie
 	var cbNsfw = document.getElementById("nsfw");
 	cbNsfw.checked = $.cookie("nsfw") === "true";
 	cbNsfw.onchange = function() { $.cookie("nsfw", cbNsfw.checked); }
