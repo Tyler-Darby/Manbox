@@ -120,15 +120,16 @@ var keywords = [
 
 CodeMirror.defineSimpleMode("rant", {
 	start: [
-		{regex: /((?:^|[^\\])\[)(\?)/, token: [null, "strong"]},
+		{regex: /((?:^|[^\\])\[)(\?)/, token: [null, "keyword"]},
 		{regex: /\\((?:\d+,)?(?:[^u\s\r\n]|u[0-9a-f]{4}))/, token: "string"},
 		{regex: new RegExp("((?:^|[^\\\\])\\[)([$]\\w+|" + keywords + ")(?:[:\\]])", "i"), token: [null, "keyword"]},
-		{regex: /((?:^|[^\\])\[)(%[:=!]?\w+)/, token: [null, "variable-3"]},
+		{regex: /((?:^|[^\\])\[)(%[:=!]?\w+)(\s*(?:\+\^?\%?|\=\@?|![@^$]?|\$\^?|\@[?^$]?))?/, token: [null, "keyword", "strong"]},
+		{regex: /(^|[^\\])\{\%\s*\w+\s*[^\\]\}/, token: "em"},
 		{regex: /#.*/, token: "comment"},
 		{regex: /\/\/(.*?[^\\])?\/\/i?/, token: "string"},
 		{regex: /(^|[^\\])("(?:(?:[^"]|"")*)?")/, token: [null, "string"]},
 		{regex: /(^|[^\\])(\<(?:.|[\r\n])*?[^\\]\>)/g, token: [null, "atom"]},
-		{regex: /((?:^|[^\\])\[)(\$\??)(\[.*?\])/, token: [null, "qualifier", "def"]}		
+		{regex: /(^|[^\\])(\[)(\$\??)(\[.*?\])/, token: [null, null, "keyword", "special"]}		
 	],
 	meta: {
 		dontIndentStates: ["comment"],
