@@ -12,7 +12,7 @@ using Manbox.CmdLine;
 
 namespace Manbox
 {
-    public static class RohBot
+    public static class Bot
     {
         private static readonly SHA1CryptoServiceProvider sha1 = new SHA1CryptoServiceProvider();
         private static WebSocket ws = null;
@@ -63,7 +63,7 @@ namespace Manbox
             return output;
         }
 
-        public static async void Connect()
+        public static async void ConnectRohBot()
         {
             await Task.Run(() =>
             {
@@ -93,7 +93,7 @@ namespace Manbox
                 {
                     Console.WriteLine("Lost connection to RohBot.");
                     Thread.Sleep(5000);
-                    Connect();
+                    ConnectRohBot();
                 };
 
                 ws.OnError += (sender, args) => Console.WriteLine("FUCK SHIT PISS " + args.Exception.ToString());

@@ -33,11 +33,7 @@ namespace Manbox
 
         public const int MaxOutputSize = 32768;
 
-        private const int MaxSatanExecutionTime = 100000;
-
-        private const string LoremIpsum = @"[sync:phrase;cdeck][before:[caps:first]][rep:6][sep:\s]{<noun.plural::=a>... so many <noun.plural::=a>.|{All my life|For [num:2;50] <timenoun.plural>}, I have {endeavored|tried|longed} to <verb> <noun.plural>.|<verb.noun::=a> isn't <verb.noun::=a> without {some|a little|a dash of|a bit of} {<substance>|<noun.plural>|<adj.ness>}.|They say that <verb.noun> is {bad|good} for the <noun-body>... {That is <adj>|They lie|It's the [chance:50]{{fucking|goddamn}\s}truth|I believe it[chance:10]{ <adv>}}.|And that{'s|\swas} when I [chance:50]{{finally|at last}\s}{realized|noticed}, {drinking|consuming|ingesting} <substance> is how I get my {<noun>|<substance>}.|<name> once told me that for every <noun> that <verb.s>, a <noun> gets its <noun.plural>.|I came to this place in hopes of finding the {long-lost|legendary|sacred} [caps:word]<noun>-<verb.er>[caps:none].|After I got <verb.ed>, I was <adv> <adj> with <adj.ness>. It was truly a <verb.ing> <timenoun> in my life.|So here I am, <verb.ing> a <noun>, <verb.ing> my <noun-body> and {checking out|looking at|examining|spying} {this <noun>|my <rel>|some {guy|girl|kid|woman|man|dude}} <verb.ing> {in the corner|across from me}. {Is this what my life has come to|What has my life come to}?|I {like|love|hate} <noun.plural>{.|!}|Do you like {to <verb> <noun.plural>|<verb.ing> <noun.plural>}?|I'm not sure whether my <noun> is <adj>, or I {just|simply} have a <adj> <noun-body>...|[rep:[num:6;14]][caps:first]{a|e|i|o|u|y}{.|?|!}|I would love to <verb> your <noun> right now.|Have you heard of <name> <surname>? [caps:first]<pron.nom::=a>'s a {<adj> <noun><verb.er>|<job>|[num:1;10]-<noun-body> <noun-animal>|the {best|worst} <verb.er> of <noun.plural>}.|For {some reason|reasons unknown}, <name> {likes to <verb>|enjoys <verb.ing>} <noun.plural> <adv>. {I think it's <em> <adj> of <pron> to do|That's <adv> unacceptable|<x>}.|<x>, what is going on with your <noun in body>? It's <em> <adj-appearance>{.|!}|I think it's time to <verb> some <adj> <noun.plural>{.|!}|[rep:[num:8;24]][sep:\sand\s][caps:first]{<noun.plural>|<verb.noun>}...}";
-
-        private static readonly RantEngine _manhood = new RantEngine("dictionary");
+        private static readonly RantEngine _rant = new RantEngine("dictionary");
 
         public Webserver()
         {
@@ -68,13 +64,9 @@ namespace Manbox
                 var parts = message.Split(new[] {':'}, 2);
                 if (parts.Length != 2) return "";
                 var response = new JObject();
-                response["text"] = RohBot.RunPat(parts[1]);
+                response["text"] = Bot.RunPat(parts[1]);
                 return response.ToString();
             };
-
-            //Get["/hell/"] = p => new RedirectResponse("/hell/" + GeneratePageName());
-
-            //Get["/hell/{name}"] = p => RunSatan(p.name);
 
             Post["/rantbox/run"] = p =>
             {
@@ -82,8 +74,6 @@ namespace Manbox
             };
 
             Post["/rantbox/fetch"] = p => FetchPage(Request.Form.Hash);
-
-            Get["/rantbox/lorem_ipsum"] = p => _manhood.Do(LoremIpsum).MainValue;
         }
 
         private static string GenerateKey()

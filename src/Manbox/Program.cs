@@ -31,7 +31,7 @@ namespace Manbox
             StaticConfiguration.DisableErrorTraces = false;
             ServicePointManager.ServerCertificateValidationCallback = (a, b, c, d) => true;
 
-            RohBot.Connect();
+            Bot.ConnectRohBot();
 
             Console.WriteLine("Starting server...");
 
