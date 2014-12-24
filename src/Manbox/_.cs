@@ -39,6 +39,7 @@ namespace Manbox
         static _()
         {
             IsMono = Type.GetType("Mono.Runtime") != null;
+            RantEngine.MaxStackSize = 128;
             VocabClean = RantDictionary.FromDirectory("dictionary", NsfwFilter.Disallow);
             VocabDirty = RantDictionary.FromDirectory("dictionary", NsfwFilter.Allow);
         } 
