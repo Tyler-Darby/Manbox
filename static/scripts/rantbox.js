@@ -115,7 +115,7 @@ var rantKeywords = [
 	"chance", "char", "close", "clrt", "cmp", "define", "dist", "else", "even", "extern", "(?:not)?first", "g", "generation",
 	"get", "group", "if[n]?def", "is", "(?:not)?last", "len", "merge", "m", "(?:not)?middle", "nth", "numfmt", "mark", "match",
 	"odd", "osend", "out", "repcount", "rc", "repindex", "ri", "repnum", "rn", "send", "src", "step", "undef", "x", "xnew",
-	"xnone", "xpin", "xreset", "xseed", "xunpin"
+	"xnone", "xpin", "xreset", "xseed", "xunpin", "rhymemode"
 	].join("|");
 
 var rantModes = [
@@ -123,7 +123,8 @@ var rantModes = [
 	"normal", "roman(?:[-_](?:upper|lower))?", "group(?:[-_](?:commas|dots))?", "verbal[-_]en",
 	"locked", "c?deck", "ordered", "reverse",
 	"public", "private", "internal",
-	"different", "(?:not[-_])?equal", "less", "greater", "none", "one", "all", "any"
+	"different", "(?:not[-_])?equal", "less", "greater", "none", "one", "all", "any",
+	"perfect", "weak", "syllabic", "semirhyme", "forced", "slant[-_]rhyme", "pararhyme", "alliteration"
 ].join("|");
 
 CodeMirror.defineSimpleMode("rant", {
@@ -138,7 +139,8 @@ CodeMirror.defineSimpleMode("rant", {
 		{regex: /\/\/(.*?[^\\])?\/\/i?/, token: "string"},
 		{regex: /(^|[^\\])("(?:(?:[^"]|"")*)?")/, token: [null, "string"]},
 		{regex: /(^|[^\\])(\<(?:.|[\r\n])*?[^\\]\>)/g, token: [null, "atom"]},
-		{regex: /(^|[^\\])(\[)(\$\??)(\[.*?\])/, token: [null, null, "keyword", "special"]}		
+		{regex: /(^|[^\\])(\[)(\$\??)(\[.*?\])/, token: [null, null, "keyword", "special"]},
+		{regex: /(?<)\*\s*\d+\s*\*/
 	],
 	meta: {
 		dontIndentStates: ["comment"],
