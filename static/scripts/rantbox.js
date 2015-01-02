@@ -139,8 +139,7 @@ CodeMirror.defineSimpleMode("rant", {
 		{regex: /\/\/(.*?[^\\])?\/\/i?/, token: "string"},
 		{regex: /(^|[^\\])("(?:(?:[^"]|"")*)?")/, token: [null, "string"]},
 		{regex: /(^|[^\\])(\<(?:.|[\r\n])*?[^\\]\>)/g, token: [null, "atom"]},
-		{regex: /(^|[^\\])(\[)(\$\??)(\[.*?\])/, token: [null, null, "keyword", "special"]},
-		{regex: /(?<)\*\s*\d+\s*\*/
+		{regex: /(^|[^\\])(\[)(\$\??)(\[.*?\])/, token: [null, null, "keyword", "special"]}
 	],
 	meta: {
 		dontIndentStates: ["comment"],
