@@ -29,7 +29,7 @@ namespace Manbox
             Environment.Exit(0);
         });
 
-        public const int MaxManboxExecutionTime = 3000;
+        public const int MaxManboxExecutionTime = 5000;
 
         public const int MaxOutputSize = 32768;
 
