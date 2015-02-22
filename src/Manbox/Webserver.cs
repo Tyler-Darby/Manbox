@@ -37,13 +37,7 @@ namespace Manbox
 
         public Webserver()
         {
-            Get["/"] = p => File.ReadAllText("pages/home.html");
-
-            foreach (var path in Directory.GetFiles("pages", "*.html"))
-            {
-                string path1 = path;
-                Get["/" + Path.GetFileNameWithoutExtension(path)] = p => File.ReadAllText(path1);
-            }
+            Get["/"] = p => File.ReadAllText("pages/rantbox.html");
 
             Get["/kill/" + KillKey] = p =>
             {
